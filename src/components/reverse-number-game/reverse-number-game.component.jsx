@@ -28,6 +28,10 @@ class ReverseNumberGameComponent extends React.Component {
         const reverseNumber = event.currentTarget.value;
 
         if (this.state.originalNumber.length !== reverseNumber.length) {
+            this.setState({
+                resultMessage: 'Not the same length.'
+            });
+
             return;
         }
 
@@ -37,7 +41,7 @@ class ReverseNumberGameComponent extends React.Component {
 
         this.setState({
             resultMessage: resultMessage
-        })
+        });
     }
 
     validateSameReverse(originalNumber, reverseNumber) {
